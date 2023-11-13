@@ -67,7 +67,7 @@ def main():
     logger.addHandler(tg_log_handler)
     logger.addHandler(stdout_handler)
 
-    logger.debug('Бот стартовал')
+    logger.debug('Bot started')
 
     check_url = 'https://icp.administracionelectronica.gob.es/icpplustieb/citar?p=8&locale=es'
 
@@ -86,7 +86,7 @@ def main():
             try:
                 page.goto(check_url)
                 if is_cita_available(page, nie, name):
-                    logger.info(f'Походу сита есть, бегом записываться')
+                    logger.info(f'Cita found, go make an appointment')
                     timestamp = time.strftime('%Y/%m/%d_%H_%M_%S', time.localtime())
                     page.screenshot(path=f'screenshot_{timestamp}.png')
                 else:
