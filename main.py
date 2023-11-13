@@ -90,7 +90,7 @@ def main():
                     timestamp = time.strftime('%Y/%m/%d_%H_%M_%S', time.localtime())
                     page.screenshot(path=f'screenshot_{timestamp}.png')
                 else:
-                    logging.debug('Сит нема :(')
+                    logger.debug('No cita :(')
                 time.sleep(DELAY_BETWEEN_REQUESTS)
             except Exception as e:
                 logger.exception(e)
